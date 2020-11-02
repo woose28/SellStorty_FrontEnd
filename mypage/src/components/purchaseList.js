@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import LeftMenu from './leftMenu';
+import PurchaseItem from './purchaseItem';
 import divider from '../img/divider.svg';
 
 const useStyles = makeStyles((theme) => ({
@@ -47,7 +48,7 @@ export default function PurchaseList(){
       <div className={classes.content}>
         <div className={classes.txt_purchaseList}>구매한 전자책</div>
         <img src={divider} className={classes.img_divider} alt='divider'/>
-
+        <PurchaseItem/>
       </div>
     </div>
   );
