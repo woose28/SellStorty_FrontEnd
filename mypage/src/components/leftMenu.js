@@ -121,7 +121,7 @@ export default function LeftMenu(props){
             <span className={classes.txt_accordionTitle}>마이페이지</span>
           </AccordionSummary>
           <AccordionDetails className={classes.accordion_details}>
-            <Tabs orientation="vertical" className={classes.tabs}>
+            <Tabs orientation="vertical" className={classes.tabs} value={false}>
               <Tab label={<span className={selected === 'myIntroduction' ? classes.txt_tab_selected : classes.txt_tab}>내 소개</span>} className={classes.tab} href='./myIntroduction'/>
               <Tab label={<span className={selected === 'modifyingMemberInfo' ? classes.txt_tab_selected : classes.txt_tab}>회원정보수정</span>} className={classes.tab} href='./modifyingMemberInfo'/>
             </Tabs>
@@ -132,7 +132,7 @@ export default function LeftMenu(props){
             <span className={classes.txt_accordionTitle}>구매 관리</span>
           </AccordionSummary>
           <AccordionDetails className={classes.accordion_details}>
-            <Tabs orientation="vertical" className={classes.tabs}>
+            <Tabs orientation="vertical" className={classes.tabs} value={false}>
               <Tab label={<span className={selected === 'purchaseList' ? classes.txt_tab_selected : classes.txt_tab}>구매한 전자책</span>} className={classes.tab} href='./purchaseList'/>
             </Tabs>
           </AccordionDetails>
@@ -142,10 +142,10 @@ export default function LeftMenu(props){
             <span className={classes.txt_accordionTitle}>판매 관리</span>
           </AccordionSummary>
           <AccordionDetails className={classes.accordion_details}>
-            <Tabs orientation="vertical" className={classes.tabs}>
-              <Tab label={<span className={selected === 'enrollmentBook' ? classes.txt_tab_selected : classes.txt_tab}>전자책 등록</span>} className={classes.tab}/>
-              <Tab label={<span className={selected === 'salesList' ? classes.txt_tab_selected : classes.txt_tab}>판매 목록</span>} className={classes.tab}/>
-              <Tab label={<span className={selected === 'revenuManagement' ? classes.txt_tab_selected : classes.txt_tab}>매출 관리</span>} className={classes.tab}/>
+            <Tabs orientation="vertical" className={classes.tabs} value={false}>
+              <Tab label={<span className={selected === 'enrollmentBook' ? classes.txt_tab_selected : classes.txt_tab}>전자책 등록</span>} className={classes.tab} href='./enrollmentBook'/>
+              <Tab label={<span className={selected === 'salesList' ? classes.txt_tab_selected : classes.txt_tab}>판매 목록</span>} className={classes.tab} href='./salesList'/>
+              <Tab label={<span className={selected === 'revenuManagement' ? classes.txt_tab_selected : classes.txt_tab}>매출 관리</span>} className={classes.tab} href='./revenueManagement'/>
             </Tabs>
           </AccordionDetails>
         </Accordion>
