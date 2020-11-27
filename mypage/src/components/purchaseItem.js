@@ -14,26 +14,6 @@ const useStyles = makeStyles((theme) => ({
     display : 'flex',
     flexDirection : 'row',
   },
-  txt_purchaseList : {
-    width: '150px',
-    height: '27px',
-    opacity : '0.9',
-    fontFamily: 'NanumBarunGothic',
-    fontSize: '23px',
-    fontWeight: 'bold',
-    fontStretch: 'normal',
-    fontStyle: 'normal',
-    letterSpacing: 'normal',
-    textAlign: 'left',
-    color: '#434343',
-  },
-  img_divider : {
-    marginTop : '16px',
-    width : '879px',
-    height : '0',
-    objectFit : 'contain',
-    border : 'solid 1px #434343',
-  },
   container_thumbnail : {
     height : '150px',
     display : 'flex',
@@ -73,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
     width : '100%',
     display : 'flex',
     flexDirection : 'row',
+    position : 'relative',
   },
   btn : {
     marginLeft : 'auto',
@@ -100,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
   txt_title : {
     marginTop : 'auto',
     marginBottom : 'auto',
-    width : '61px',
+    width : 'auto',
     height : '24px',
     opacity : '0.8',
     fontFamily: 'NanumBarunGothic',
@@ -114,8 +95,9 @@ const useStyles = makeStyles((theme) => ({
   },
   txt_price : {
     marginTop : '16px',
-    marginLeft : '289px',
-    width: '68px',
+    position : 'absolute',
+    left : '350px',
+    width: 'auto',
     height: '20px',
     opacity : '0.8',
     fontFamily: 'NanumBarunGothic',
@@ -142,8 +124,9 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'left',
     color: '#434343',
   },
-  txt_download_date_ml_262 : {
-    marginLeft : '262px',
+  txt_download_date_l_350 : {
+    position : 'absolute',
+    left : '350px',
     width : '136px',
     height : '20px',
     opacity : '0.6',
@@ -156,8 +139,9 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'left',
     color: '#434343',
   },
-  txt_download_date_ml_60 : {
-    marginLeft : '60px',
+  txt_download_date_l_546 : {
+    position : 'absolute',
+    left : '546px',
     width : '136px',
     height : '20px',
     opacity : '0.6',
@@ -178,9 +162,23 @@ const useStyles = makeStyles((theme) => ({
     border : `solid 1px ${fade('#434343', 0.2)}`,
   },
 }));
-export default function PurchaseItem(){
+
+function PurchaseItem(props){
   const classes = useStyles();
 
+  const title_sclicing = (title) => {
+    if(title.length >= 25){
+      title = title.slice(0, 25)+'...'
+    }
+    return title
+  }
+  
+  const author_sclicing = (author) => {
+    if(author.length >= 30){
+      author = author.slice(0, 30)+'...'
+    }
+    return author
+  }
   return(
     <div>
         <div className={classes.content}>
@@ -193,14 +191,14 @@ export default function PurchaseItem(){
                     <Button className={classes.btn}><span className={classes.txt_btn}>다운로드</span></Button>
                 </div>
                 <div className={clsx(classes.container_row_1, classes.container_row_2)}>
-                    <span className={classes.txt_title}>책 제목</span>
-                    <span className={classes.txt_price}>가격:0원</span>
+                    <span className={classes.txt_title}>{title_sclicing(props.title)}</span>
+                    <span className={classes.txt_price}>가격:{props.price}원</span>
                     <Button className={classes.btn}><span className={classes.txt_btn}>환불하기</span></Button>
                 </div>
                 <div className={clsx(classes.container_row_1, classes.container_row_3)}>
-                    <span className={classes.txt_author}>책 저자 이름</span>
-                    <span className={classes.txt_download_date_ml_262}>2020.00.00 다운</span>
-                    <span className={classes.txt_download_date_ml_60}>2020.00.00 다운</span>
+                    <span className={classes.txt_author}>{author_sclicing(props.author)}</span>
+                    <span className={classes.txt_download_date_l_350}>{props.download_date} 다운</span>
+                    <span className={classes.txt_download_date_l_546}>{props.download_date} 다운</span>
                 </div>
             </div>
         </div>
@@ -208,3 +206,14 @@ export default function PurchaseItem(){
     </div>
   );
 }
+
+
+
+PurchaseItem.defaultProps = {
+  title : '제목 없음',
+  author : '저자 없음',
+  price : '--',
+  download_date : '----.--.--'
+};
+
+export default PurchaseItem;
