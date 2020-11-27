@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
       objectFit: 'contain',
       border: 'solid 1px #434343',
     },
-
+ 
     txt_method : {
       marginTop : '33px',
       width: '100px',
