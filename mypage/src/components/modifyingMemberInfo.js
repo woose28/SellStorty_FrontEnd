@@ -120,9 +120,6 @@ const useStyles = makeStyles((theme) => ({
   input_focused : {
 
   },
-  input_hover : {
-
-  },
   input_name : {
     marginLeft : 'auto',
     marginRight : '119px',
@@ -350,7 +347,6 @@ export default function ModifyingMemberInfo(){
                 root : classes.input_root,
                 notchedOutline : classes.input_notchedOutline,
                 focused : classes.input_focused,
-                hover : classes.input_hover,
               }
             }}
             />
@@ -363,7 +359,7 @@ export default function ModifyingMemberInfo(){
             InputProps = {{
               endAdornment : (
                 <InputAdornment position = 'end' onClick={clickDelete}>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 60 60" fill="none" stroke-width="15px" stroke-linecap="round" stroke-linejoin="round">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 60 60" fill="none" strokeWidth="15px" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M10 10 l20 20 l-20 20 l40 -40 l-20 20 l20 20" stroke={fade('#434343', 0.5)}/>
                   </svg>
                 </InputAdornment>
@@ -372,7 +368,6 @@ export default function ModifyingMemberInfo(){
                 root : classes.input_root,
                 notchedOutline : classes.input_notchedOutline,
                 focused : classes.input_focused,
-                hover : classes.input_hover,
               },
             }}
             />
@@ -389,7 +384,6 @@ export default function ModifyingMemberInfo(){
                 root : classes.input_root,
                 notchedOutline : classes.input_notchedOutline,
                 focused : classes.input_focused,
-                hover : classes.input_hover,
               }
             }}
             />
@@ -403,7 +397,6 @@ export default function ModifyingMemberInfo(){
                 root : classes.input_root,
                 notchedOutline : classes.input_notchedOutline,
                 focused : classes.input_focused,
-                hover : classes.input_hover,
               }
             }}
             />
